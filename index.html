@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Vendor Login Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="Phoenixcoded">
+    <meta name="Devang Pradhan" content="Goldemdal">
+    <!-- Favicon icon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="exaset/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="exaset/css/component.css">
+    <link rel="stylesheet" type="text/css" href="exaset/css/style.css">
+    <link rel="stylesheet" type="text/css" href="exaset/css/login.css">
+    <link rel="stylesheet" type="text/css" href="exaset/icon/themify-icons/themify-icons.css">
+    <link rel="stylesheet" type="text/css" href="exaset/icon/icofont.css">
+</head>
+
+<body>
+    <section class="login p-fixed d-flex text-center ">
+        <!-- Container-fluid starts -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="animation-model">
+                        <button id="loginbtn" type="button" class="btn btn-danger waves-effect md-trigger"
+                            data-modal="modal" data-toggle="modal">Login</button>
+                        <!-- Authentication card start -->
+                        <div class="md-modal md-effect-11 " id="modal" role="dialog">
+                            <div class="auth-box col-md-12 md-content">
+                                <div id="signup" class="active">
+                                    <button type="button" id="winClose" class="md-close close">
+                                        <i class="ti ti-close"></i>
+                                    </button>
+                                    <div class="row justify-content-center">
+                                        <img class="card-block" src="exaset/media/gmelogo.svg">
+                                    </div>
+                                    <hr />
+
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" required="required"
+                                            placeholder="Your Email Address">
+                                        <span class="md-line"></span>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" placeholder="Password">
+                                        <span class="md-line"></span>
+                                    </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary waves-effect md-trigger">Sign
+                                                in</button>
+                                        </div>
+                                    </div>
+                                    <div class="buttonbox">
+                                        <a href="#" id="gotosignin" class="tab">Forgot Your Password?</a>
+                                    </div>
+
+                                </div>
+                                <div id="signin">
+                                    <div class="row justify-content-center">
+                                        <img class="card-block" src="exaset/media/gmelogo.svg">
+                                    </div>
+                                    <hr />
+                                    <div class="row justify-content-center pt-1 pb-2">
+                                        <h6 class="text-center">Reset Your Password Here</h6>
+                                    </div>
+                                    <div class="input-group">
+                                        <input type="email" class="form-control" required data-required="true"
+                                            placeholder="Your Email Address">
+                                        <span class="md-line"></span>
+                                    </div>
+                                    <div class="row m-t-30">
+                                        <div class="col-md-12">
+                                            <button type="button" class="btn btn-primary waves-effect md-trigger">Sendme
+                                                a new Password
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="buttonbox">
+                                        <a href="#" id="gotosignup" class="tab">Login</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md-overlay"></div>
+            </div>
+        </div>
+        <!-- end of container-fluid -->
+    </section>
+    <div class="vch">
+        <lottie-player id="vch" src="exaset/media/char.json" background="transparent" speed="1"></lottie-player>
+    </div>
+    <div class="cld">
+        <lottie-player id="cld" src="exaset/media/clouds.json" background="transparent" speed="1" loop
+            autoplay></lottie-player>
+    </div>
+    <div class="vbg">
+        <lottie-player id="vbg" src="exaset/media/envi.json" background="transparent" speed="1" loop
+            autoplay></lottie-player>
+    </div>
+
+    <script type="text/javascript" src="exaset/js/jquery.min.js"></script>
+    <script type="text/javascript" src="exaset/js/bootstrap.min.js"></script>
+    <!-- Lottie  -->
+    <script type="text/javascript" src="exaset/js/lottie-player.js"></script>
+    <script type="text/javascript" src="exaset/js/lottie-interactive.js"></script>
+    <script type="text/javascript" src="exaset/js/modalEffects.js"></script>
+    <script type="text/javascript" src="exaset/js/classie.js"></script>
+    <script type="text/javascript" src="exaset/js/login.js"></script>
+    <script>
+        let animation = document.getElementById("vch");
+
+        animation.addEventListener("ready", () => {
+            let animationData = animation.getLottie();
+            animationData.playSegments([[0, 45]], true,);
+            animation.setLooping(true);
+
+        });
+    </script>
+    <script>
+        $(".tab").click(function () {
+            $("#" + $(this).attr('id').replace("goto", "")).addClass("active");
+            $(this).parent().parent().removeClass("active");
+        }); 
+    </script>
+
+
+</body>
+
+</html>

@@ -1,2 +1,2 @@
 # vlogin
- Vendor Login Goldmedal
+ G Vendor Login
